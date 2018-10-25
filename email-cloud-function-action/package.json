@@ -1,0 +1,11 @@
+{
+  "name": "email-dispatcher",
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "bluebird": "^3.5.2",
+    "jsonwebtoken": "^8.3.0",
+    "jwk-to-pem": "^2.0.0",
+    "request": "^2.88.0"
+  }
+}
