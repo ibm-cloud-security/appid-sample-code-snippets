@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sample App</title>
+    <style>
+        html {
+            height: 100%;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100%;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-container {
+            background: #EFF2F5;
+            box-shadow: 0 2px 2px 0 rgba(140, 155, 165, 0.25);
+            text-align: center;
+            color: #42535C;
+            margin-bottom: 28px;
+        }
+
+        .maindiv {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .middle-container {
+            background: white;
+            text-align: left;
+            margin-left: 10%;
+            margin-bottom: 46px;
+        }
+
+        .bottom-container {
+            background: #F5F7FA;
+            box-shadow: 0 2px 2px 0 rgba(140, 155, 165, 0.25);
+            flex-grow: 1;
+        }
+
+        .bottom-container-data {
+            display: inline-block;
+            margin-top: 31px;
+            margin-left: 10%;
+            min-width: 80%;
+        }
+
+        .token-title {
+            font-family: IBMPlexSans;
+            font-size: 14px;
+            color: #000000;
+            margin-bottom: 21px;
+        }
+
+        .token-info {
+            font-family: IBMPlexMono;
+            background: #FFFFFF;
+            box-shadow: 0 2px 2px 0 rgba(140, 155, 165, 0.25);
+            font-size: 14px;
+            color: #152934;
+            line-height: 24px;
+            font-weight: normal;
+            padding: 15px 20px 20px 32px;
+            margin-right: 90px;
+            margin-bottom: 20px;
+        }
+
+        .hello-text {
+            font-family: IBMPlexSans-Light;
+            font-size: 20px;
+            color: #000000;
+            letter-spacing: 0;
+            line-height: 26px;
+            margin-bottom: 30px;
+        }
+
+        .above-button-text {
+            font-family: IBMPlexSans-Light;
+            font-size: 14px;
+            color: #000000;
+            letter-spacing: 0;
+            margin-bottom: 13px;
+        }
+
+        .button {
+            background: #4178BE;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            height: 36px;
+            width: 231px;
+        }
+
+        .button-text {
+            font-family: IBMPlexSans-Medium;
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            text-align: center;
+            margin: 8px 20px 10px 12px;
+        }
+
+        .top {
+            background: #5596E6;
+            color: white;
+            font-size: 16px;
+            font-weight: lighter;
+            box-shadow: 0 4px 2px 0 rgba(140, 155, 165, 0.25);
+            padding-bottom: 40px;
+        }
+
+        #menu li {
+            padding: 5px 15px;
+            border-top: 1px solid #eaeaea;
+        }
+
+        #menu ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        #menu li:nth-child(1) {
+            border-top: 0;
+        }
+
+        #menu li a {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div id="maindiv" class="maindiv">
+    <div class="top-container">
+        <div class="top">
+        </div>
+    </div>
+
+    <div class="middle-container">
+        <div class="hello-text">
+            Hi <%- name %>!<br>
+            This is a <%- protection %> protected page<br>
+        </div>
+        <div class="above-button-text">
+            What you can do next:
+        </div>
+        <a href="https://cloud.ibm.com/docs/services/appid?topic=appid-web-apps" target="_blank">
+            <button class="button">
+                <div class="button-text">
+                    Add App ID to your own app
+                </div>
+            </button>
+        </a>
+    </div>
+
+    <div class="bottom-container">
+        <div class="bottom-container-data">
+            <div class="token-title">
+                Access Token
+            </div>
+            <div id="tokenPayload" class="token-info">
+                <%- JSON.stringify(decodedToken) %>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
