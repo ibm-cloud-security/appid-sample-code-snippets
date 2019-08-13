@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>{{title}}}</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="icon" href="/assets/logo_cloud_land.png">
+      <style>
+          body {
+            background-image: url(assets/bg.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            padding-top: 80px;
+            height: 100vh;
+            width: 100vw;
+          }
+          .textStyle {
+            color: white;
+            text-align: center;
+          }
+          .spin {
+              display: inline-block;
+              width: 100%;
+              text-align:center;
+          }
+        </style>
+  </head>
+    
+  <body class="container textStyle col-sm-6 col-sm-offset-3">
+      <div id="imgDiv">
+        <img class="center-block" id="logo" alt="logo"
+             style="height: 140px; width: 140px; object-fit: contain;margin-top: 40px" src="assets/logo_cloud_land.png">
+      </div>
+      
+      <app-cloudland-home></app-cloudland-home>
+  </body>
+
+</html>
+
+

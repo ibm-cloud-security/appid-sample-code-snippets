@@ -1,0 +1,13 @@
+<div *ngIf="(userState!==undefined && userState.logged); else not_loggedIn">
+  <h3> Welcome! You are logged in as : </h3>
+  <h3> Name : {{userState.loggedInAs.name}}</h3>
+  <h3> Email : {{userState.loggedInAs.email}}</h3>
+  <h3> Your Cloud Land rewards points balance is : {{cloudLandRewardPoints}}</h3> 
+  
+  <a class="btn btn-lg btn-primary btn-login hideOnStartup" href="http://localhost:3000/auth/logout" id="logoutButton">Logout</a>
+</div>
+
+<ng-template #not_loggedIn>
+  <h3> You are not logged in. Please sign in</h3>
+  <a class="btn btn-lg btn-primary btn-login hideOnStartup" href="http://localhost:3000/auth/login" id="loginbutton">Login</a>
+</ng-template>
