@@ -1,0 +1,20 @@
+{
+    "name": "cloudland-backend",
+    "version": "1.0.0",
+    "description": "Cloud Land Sample Application",
+    "main": "app.js",
+    "private": true,
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "bluemix-appid": "^3.0.0",
+        "cfenv": "^1.0.3",
+        "cors": "^2.8.4",
+        "express": "^4.13.4",
+        "express-enforces-ssl": "^1.1.0",
+        "express-session": "^1.15.1",
+        "nconf": "^0.10.0",
+        "passport": "^0.3.2"
+    }
+}
