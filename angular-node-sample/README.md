@@ -1,5 +1,6 @@
 
 # Cloud Land sample Web application
+Sample Code for Blog : https://www.ibm.com/cloud/blog/securing-angularnode-js-applications-using-app-id
 
 ## Package contents
 
@@ -36,8 +37,3 @@ Navigate to cloudland-backend directory and copy `config.template.json` to `conf
 5. Navigate to cloudland-backend directory and Run `npm install` and then `npm start` and you should see that your Node backend is up and running on localhost:3000.
 
 6. Navigate to cloudland-ui directory and Run `npm install` and then `ng serve --open` and you should see a new tab open up in your browser at localhost:4200
-
-
-
-
-
