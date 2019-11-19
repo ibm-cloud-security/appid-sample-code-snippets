@@ -3,7 +3,7 @@
   "tenantId": "<tenantId>",
   "secret": "<secret>",
   "profilesUrl": "<profilesUrl>",
-  "redirectUri": "<redirectUri>",
+  "redirectUri": "http://localhost:3000/ibm/cloud/appid/callback",
   "version": "<version>",
   "appidServiceEndpoint": "<appidServiceEndpoint>"
 }
