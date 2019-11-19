@@ -1,0 +1,9 @@
+{
+  "clientId": "0ce17f9b-29fa-4163-bad9-8336c36e1c11",
+  "tenantId": "5f892da7-3dd1-4d87-8e77-b94395e18268",
+  "secret": "YmQ2ZjFjY2ItMTM5My00YzI3LThlNTYtMzM5YTZmNTFhNjRk",
+  "profilesUrl": "https://eu-gb.appid.test.cloud.ibm.com",
+  "redirectUri": "http://localhost:3000/ibm/cloud/appid/callback",
+  "version": 4,
+  "appidServiceEndpoint": "https://eu-gb.appid.test.cloud.ibm.com"
+}
