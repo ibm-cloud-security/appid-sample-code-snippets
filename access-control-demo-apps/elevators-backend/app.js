@@ -33,12 +33,6 @@ app.use(session({
 	proxy: true
 }));
 
-// Configure passportjs with user serialization/deserialization. This is required
-// for authenticated session persistence accross HTTP requests. See passportjs docs
-// for additional information http://passportjs.org/docs
-passport.serializeUser((user, cb) => cb(null, user));
-passport.deserializeUser((obj, cb) => cb(null, obj));
-
 // Configure express application to use passportjs
 app.use(passport.initialize());
 app.use(passport.session());
@@ -52,7 +46,8 @@ passport.use(new APIStrategy({
 app.get("/protected/serviceMode",
 	passport.authenticate(APIStrategy.STRATEGY_NAME, {
 		audience: config.clientId,
-		scope: "elevator.service"
+		scope: "elevator.service",
+		session: false
 	}),
 	function(req, res) {
 		res.send('success');
@@ -60,7 +55,8 @@ app.get("/protected/serviceMode",
 app.get("/protected/stopElevator",
 	passport.authenticate(APIStrategy.STRATEGY_NAME, {
 		audience: config.clientId,
-		scope: "elevator.stop"
+		scope: "elevator.stop",
+		session: false
 	}),
 	function(req, res) {
 		res.send('success');

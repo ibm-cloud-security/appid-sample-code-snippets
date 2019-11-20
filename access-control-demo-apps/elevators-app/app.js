@@ -87,7 +87,7 @@ app.get("/protected/serviceMode", async function(req, res) {
 	const options = {
 		url: 'http://localhost:1234/protected/serviceMode',
 		headers: {
-			'Authorization': 'Bearer ' + req.session[WebAppStrategy.AUTH_CONTEXT].accessToken + ' ' + req.session[WebAppStrategy.AUTH_CONTEXT].identityToken
+			'Authorization': 'Bearer ' + req.session[WebAppStrategy.AUTH_CONTEXT].accessToken
 		}
 	};
 	try {
@@ -103,7 +103,7 @@ app.get("/protected/stopElevator", async function(req, res) {
 	const options = {
 		url: 'http://localhost:1234/protected/stopElevator',
 		headers: {
-			'Authorization': 'Bearer ' + req.session[WebAppStrategy.AUTH_CONTEXT].accessToken + ' ' + req.session[WebAppStrategy.AUTH_CONTEXT].identityToken
+			'Authorization': 'Bearer ' + req.session[WebAppStrategy.AUTH_CONTEXT].accessToken
 		}
 	};
 	try{
