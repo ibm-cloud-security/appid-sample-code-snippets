@@ -43,6 +43,15 @@ passport.use(new APIStrategy({
 }));
 
 //-------------------------------------- access control ----------------------------------------//
+app.get("/protected/callElevator",
+	passport.authenticate(APIStrategy.STRATEGY_NAME, {
+		audience: config.clientId,
+		scope: "elevator.call",
+		session: false
+	}),
+	function(req, res) {
+		res.send('success');
+	});
 app.get("/protected/serviceMode",
 	passport.authenticate(APIStrategy.STRATEGY_NAME, {
 		audience: config.clientId,

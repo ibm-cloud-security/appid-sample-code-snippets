@@ -82,6 +82,22 @@ app.get("/protected/api/shouldShowTechnicianMenu", (req, res) => {
 	res.send(WebAppStrategy.hasScope(req, 'elevator.service elevator.stop'));
 });
 
+// Call protected endpoint on backend, where we will check if the access token has the "elevator.call" scope.
+app.get("/protected/callElevator", async function(req, res) {
+	const options = {
+		url: 'http://localhost:1234/protected/callElevator',
+		headers: {
+			'Authorization': 'Bearer ' + req.session[WebAppStrategy.AUTH_CONTEXT].accessToken
+		}
+	};
+	try {
+		await request(options);
+		res.send('The elevator will arrive shortly.');
+	}catch(e) {
+		res.send("You don't have permissions to perform this action.");
+	}
+});
+
 // Call protected endpoint on backend, where we will check if the access token has the "elevator.service" scope.
 app.get("/protected/serviceMode", async function(req, res) {
 	const options = {
