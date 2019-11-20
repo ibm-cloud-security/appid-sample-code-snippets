@@ -13,13 +13,13 @@ This server uses App ID's access control feature to manage user access.
 * Node 6.0.0 or higher
 
 ## Running Locally
+First, you should add your App ID application's credentials to the localdev-config.json. You can find the credentials of your applications in the App ID dashboard under Applications.
 
-Run the following commands:
+Then run the following commands:
 ```bash
 npm install
 npm start
 ```
-Use the link http://localhost:3000 to load the web application in browser.
 
 ## Got Questions?
 Join us on [Slack](https://www.ibm.com/cloud/blog/announcements/get-help-with-ibm-cloud-app-id-related-questions-on-slack) and chat with our dev team.

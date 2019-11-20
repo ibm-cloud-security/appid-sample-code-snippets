@@ -12,8 +12,9 @@ Node sample application that demonstrates the use of App ID's access control fea
 * Node 6.0.0 or higher
 
 ## Running Locally
+First, you should add your App ID application's credentials to the localdev-config.json. You can find the credentials of your applications in the App ID dashboard under Applications.
 
-Run the following commands:
+Then run the following commands:
 ```bash
 npm install
 npm start

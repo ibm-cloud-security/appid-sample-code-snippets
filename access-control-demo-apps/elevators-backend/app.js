@@ -72,6 +72,6 @@ app.listen(port, () => {
 });
 
 function getAppIDConfig() {
-		const config = require('./localdev-config.json');
+	const config = require('./localdev-config.json');
 	return config;
 }
