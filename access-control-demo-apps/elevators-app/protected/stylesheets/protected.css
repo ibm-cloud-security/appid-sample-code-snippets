@@ -168,10 +168,11 @@ p.ex1 {
 }
 
 .bottom-hint {
-    font-family: IBMPlexSans-Light;
+    font-family: IBMPlexSans-SemiBold;
     font-size: 18px;
-    color: #000000;
+    color: #4178BE;
     letter-spacing: 0;
     line-height: 26px;
-    margin-bottom: 30px;
 }
+
+a { color: inherit; }
