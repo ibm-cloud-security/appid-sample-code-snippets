@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Elevators App</title>
+    <link rel='stylesheet' href='stylesheets/protected.css'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="jquery.json-viewer.js"></script>
+    <link href="stylesheets/jquery.json-viewer.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div id="maindiv" class="maindiv">
+    <div class="top-container">
+        <div class="top">
+            <div class="logout">
+                <a href='/logout'><img class="logout-icon" href='/logout' id="logoutIcon"
+                                       src="images/logout.svg"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle-container">
+        <div class="hello-text">
+            Hi <span id="userNameSpan"></span>, welcome to App ID elevators service!<br>
+        </div>
+        <p class="box1" id="techMenu" style="display: none">
+            Technician Menu
+            <button class="button" onclick="stopElevator()">
+                <div class="button-text">
+                    Stop Elevator
+                </div>
+            </button>
+
+            <br><br>
+            <button class="button" onclick="serviceMode()">
+                <div class="button-text">
+                    Start Service Mode
+                </div>
+            </button>
+        </p>
+
+        <p class="box1" id="elevatorScreen"></p>
+
+        <div class="above-button-text">
+            You are on floor 0, choose a floor number:
+        </div>
+        <br>
+        <div>
+            <button onclick="callElevator()" class="button5">9</button>
+            <button onclick="callElevator()" class="button5">8</button>
+            <button onclick="callElevator()" class="button5">7</button>
+            <br><br>
+            <button onclick="callElevator()" class="button5">6</button>
+            <button onclick="callElevator()" class="button5">5</button>
+            <button onclick="callElevator()" class="button5">4</button>
+            <br><br>
+            <button onclick="callElevator()" class="button5">3</button>
+            <button onclick="callElevator()" class="button5">2</button>
+            <button onclick="callElevator()" class="button5">1</button>
+            <br><br>
+            <button onclick="writeToElevatorScreen('You are already on floor 0')" class="button5">0</button>
+            <button onclick="callElevator()" class="button5">-1</button>
+            <button onclick="callElevator()" class="button5">-2</button>
+        </div>
+        <br><br>
+        <div class="bottom-hint">
+            <a href="/protected/accessToken.html" target="_blank">View access token</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+	$.getJSON('/protected/api/idPayload', function ({idToken, accessToken}) {
+		$('#userNameSpan').html(idToken.name);
+		$('#accessTokenPayload').jsonViewer(accessToken, {collapsed: false});
+	});
+	$.getJSON('/protected/api/shouldShowTechnicianMenu', function (isTechnician) {
+		if(isTechnician) {
+			document.getElementById("techMenu").setAttribute('style', 'text-align:center');
+		}
+	});
+
+	function callElevator() {
+		$.ajax({url: "/protected/callElevator",
+			success: function(result){
+				writeToElevatorScreen(result);
+			}});
+	}
+	function serviceMode() {
+		$.ajax({url: "/protected/serviceMode",
+			success: function(result){
+				writeToElevatorScreen(result);
+			}});
+	}
+	function stopElevator() {
+		$.ajax({url: "/protected/stopElevator",
+			success: function(result){
+				writeToElevatorScreen(result);
+			}});
+	}
+
+	function writeToElevatorScreen(text) {
+		document.getElementById("elevatorScreen").innerHTML=text;
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "WebSdkExample-Starter",
+  "version": "1.0.0",
+  "description": "App ID web application sample",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cfenv": "^1.0.3",
+    "express": "^4.13.4",
+    "express-session": "^1.15.1",
+    "ibmcloud-appid": "^6.0.0",
+    "jquery.json-viewer": "^1.1.0",
+    "passport": "^0.3.2",
+    "request-promise": "^4.2.5"
+  }
+}

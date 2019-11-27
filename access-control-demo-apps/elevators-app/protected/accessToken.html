@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elevators App - Access Token</title>
+    <link rel='stylesheet' href='stylesheets/accessToken.css'/>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="jquery.json-viewer.js"></script>
+</head>
+<body>
+<div id="maindiv" class="maindiv">
+    <div class="top-container">
+        <div class="top"></div>
+    </div>
+
+    <div class="bottom-container">
+        <div class="bottom-container-data">
+            <div class="token-title">
+                <span id="userNameSpan"></span>'s Access Token
+            </div>
+            <div id="accessTokenPayload" class="token-info"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+	$.getJSON('/protected/api/idPayload', function ({idToken, accessToken}) {
+		$('#userNameSpan').html(idToken.name);
+		$('#accessTokenPayload').jsonViewer(accessToken, {collapsed: false});
+	});
+</script>
+
+</body>
+</html>
