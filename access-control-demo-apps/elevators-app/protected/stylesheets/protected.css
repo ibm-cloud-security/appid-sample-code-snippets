@@ -58,24 +58,9 @@ body {
     cursor: pointer;
 }
 
-.token-title {
-    font-family: IBMPlexSans;
-    font-size: 14px;
-    color: #000000;
-    margin-bottom: 21px;
-}
-
-.token-info {
-    font-family: IBMPlexMono;
-    background: #FFFFFF;
-    box-shadow: 0 2px 2px 0 rgba(140, 155, 165, 0.25);
-    font-size: 14px;
-    color: #152934;
-    line-height: 24px;
-    font-weight: normal;
-    padding: 15px 20px 20px 32px;
-    margin-right: 90px;
-    margin-bottom: 20px;
+.button5:focus {
+    opacity: 0.5;
+    outline: none;
 }
 
 .logout {
@@ -87,8 +72,8 @@ body {
     float: right;
 }
 
-p.ex1 {
-    border: 1px solid red;
+p.box1 {
+    border: 1px solid black;
     padding: 15px;
     width: 220px;
     style: 'display:none';
@@ -119,6 +104,11 @@ p.ex1 {
     cursor: pointer;
     height: 36px;
     width: 222px;
+}
+
+.button:focus {
+    opacity: 0.5;
+    outline: none;
 }
 
 .button-text {
