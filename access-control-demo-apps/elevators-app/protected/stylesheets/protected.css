@@ -49,7 +49,7 @@ body {
 .button5 {
     background: silver;
     border-radius: 50%;
-    font-family: IBMPlexMono;
+    font-family: IBMPlexMono, sans-serif;
     font-size: 24px;
     height: 80px;
     width: 80px;
@@ -72,6 +72,10 @@ body {
     float: right;
 }
 
+.elevator-screen {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
 p.box1 {
     border: 1px solid black;
     padding: 15px;
@@ -81,7 +85,7 @@ p.box1 {
 }
 
 .hello-text {
-    font-family: IBMPlexSans-Light;
+    font-family: IBMPlexSans-Light, sans-serif;
     font-size: 26px;
     color: #000000;
     letter-spacing: 0;
@@ -89,15 +93,19 @@ p.box1 {
     margin-bottom: 30px;
 }
 
+.technician-menu {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
 .above-button-text {
-    font-family: IBMPlexSans-Light;
+    font-family: IBMPlexSans-Light, sans-serif;
     font-size: 24px;
     color: #000000;
     letter-spacing: 0;
     margin-bottom: 13px;
 }
 
-.button {
+.technician-button {
     background: #4178BE;
     border: none;
     text-decoration: none;
@@ -106,13 +114,13 @@ p.box1 {
     width: 222px;
 }
 
-.button:focus {
+.technician-button:focus {
     opacity: 0.5;
     outline: none;
 }
 
 .button-text {
-    font-family: IBMPlexSans-Medium;
+    font-family: IBMPlexSans-Medium, sans-serif;
     font-size: 18px;
     color: #FFFFFF;
     letter-spacing: 0;
@@ -158,7 +166,7 @@ p.box1 {
 }
 
 .bottom-hint {
-    font-family: IBMPlexSans-SemiBold;
+    font-family: IBMPlexSans-SemiBold, sans-serif;
     font-size: 18px;
     color: #4178BE;
     letter-spacing: 0;
