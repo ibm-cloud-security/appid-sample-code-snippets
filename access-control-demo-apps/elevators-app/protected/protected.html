@@ -23,23 +23,27 @@
         <div class="hello-text">
             Hi <span id="userNameSpan"></span>, welcome to App ID elevators service!<br>
         </div>
-        <p class="box1" id="techMenu" style="display: none">
-            Technician Menu
-            <button class="button" onclick="stopElevator()">
-                <div class="button-text">
-                    Stop Elevator
-                </div>
-            </button>
+        <div class="technician-menu">
+            <p class="box1" id="techMenu" style="display: none">
+                Technician Menu<br><br>
+                <button class="technician-button" onclick="stopElevator()">
+                    <div class="button-text">
+                        Stop Elevator
+                    </div>
+                </button>
 
-            <br><br>
-            <button class="button" onclick="serviceMode()">
-                <div class="button-text">
-                    Start Service Mode
-                </div>
-            </button>
-        </p>
+                <br><br>
+                <button class="technician-button" onclick="serviceMode()">
+                    <div class="button-text">
+                        Start Service Mode
+                    </div>
+                </button>
+            </p>
+        </div>
 
-        <p class="box1" id="elevatorScreen"></p>
+        <div class="elevator-screen">
+            <p class="box1" id="elevator-screen-paragraph"></p>
+        </div>
 
         <div class="above-button-text">
             You are on floor 0, choose a floor number:
@@ -101,7 +105,7 @@
 	}
 
 	function writeToElevatorScreen(text) {
-		document.getElementById("elevatorScreen").innerHTML=text;
+		document.getElementById("elevator-screen-paragraph").innerHTML=text;
 	}
 </script>
 
