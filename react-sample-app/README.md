@@ -12,11 +12,11 @@ The IBM Cloud AppID SDK can be used with React to create a secure single-page ap
 
 * Clone the repository
 ```
-git clone https://github.ibm.com/Bernhardt-Ramat/react-sample
+git clone 
 ```
 * Navigate to application workspace folder.
 ```
-cd react-sample
+cd react-sample-app
 ```
 * To get the dpendencies for the app installed run
 ```
