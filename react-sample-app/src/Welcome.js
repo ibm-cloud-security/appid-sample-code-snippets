@@ -19,8 +19,8 @@ export default function Welcome() {
     (async () => {
         try {
             await appid.init({
-                "clientId": "2539e6da-a271-48a1-906e-34b38da4a446",
-                "discoveryEndpoint": "https://us-south.appid.cloud.ibm.com/oauth/v4/47ce5998-b92c-4a2a-b391-eae164be788a/.well-known/openid-configuration"
+                "clientId": "<CLIENT_ID>",
+                "discoveryEndpoint": "<WELL_KNOWN_ENDPOINT>"
             });
         } catch (e) {
             setErrorState('error')
