@@ -1,3 +1,11 @@
+/**
+ * This sample demonstrates how to verify and decode the payload sent by AppID,
+ * and how to use that payload to make custom decisions about who must complete MFA
+ *
+ * This sample requires a user to perform MFA if they are logging in from a web client,
+ * and allows them to skip MFA if they are logging in from a mobile application
+ */
+
 const request = require('request');
 const jwt = require('jsonwebtoken');
 const jwkToPem = require('jwk-to-pem');
@@ -21,7 +29,7 @@ app.post('/custom_extension', async function (req, res) {
   // JWT received from App ID
   const encodedData = req.body.jws;
 
-  // Decode message to get information
+  // Decode message to get user information
   const data = jwt.decode(encodedData, {complete: true});
 
   // Extract KID from header
@@ -34,6 +42,8 @@ app.post('/custom_extension', async function (req, res) {
 
   console.log(data);
 
+  // If the user is logging in from a mobile device, skip MFA
+  // Otherwise, require MFA
   if (data.device_type === 'mobile') {
     res.send({'skipMfa': true})
   } else {
