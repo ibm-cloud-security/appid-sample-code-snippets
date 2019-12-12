@@ -139,7 +139,7 @@ const loginAction = async () => {
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
         {welcomeDisplayState && <div> Welcome {userName}! You are now authenticated.</div>}
-        {loginButtonDisplayState && <button style={{fontSize: '24px', backgroundColor: 'skyblue', border: 'none'}} id='login' onClick={loginAction}>Login</button>}
+        {loginButtonDisplayState && <button style={{fontSize: '24px', backgroundColor: 'skyblue', border: 'none', cursor: 'pointer'}} id='login' onClick={loginAction}>Login</button>}
         {errorState && <div style={{color: 'red'}}>{errorMessage}</div>}
       </header>
     </div>
