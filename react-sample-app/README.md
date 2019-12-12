@@ -90,7 +90,7 @@ const loginAction = async () => {
 7. Add a welcome div, the login button that calls the login action, and an error div.
 ```JSX
 {welcomeDisplayState && <div> Welcome {userName}! You are now authenticated.</div>}
-{loginButtonDisplayState && <button style={{fontSize: '24px', backgroundColor: 'skyblue', border: 'none'}} id='login' onClick={loginAction}>Login</button>}
+{loginButtonDisplayState && <button style={{fontSize: '24px', backgroundColor: 'skyblue', border: 'none', cursor: 'pointer'}} id='login' onClick={loginAction}>Login</button>}
 {errorState && <div style={{color: 'red'}}>{errorMessage}</div>}
 ```
 8. Save all of the files. Your entire `App.js` file should look like this:
