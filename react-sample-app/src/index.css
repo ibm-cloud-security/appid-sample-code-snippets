@@ -1,114 +1,13 @@
 body {
   margin: 0;
-  padding: 0;
-  max-width: 100%;
-  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  background-color: #EBF0F7;
-  font-family: 'IBMPlexSans-SemiBold', sans-serif;
-  margin-bottom: 3%;
-  width: 100%;
-  height: 40px;
-  font-size: 14px;
-  color: #000000;
-  padding: 10px;
-  line-height: 40px;
-}
-@-moz-document url-prefix() {
-  .wrapper {
-    font-family: 'IBM Plex Sans SemiBold', 'Helvetica Neue', Arial, sans-serif;
-  }
-}
-.logo-icon {
-  display: block;
-  width: 70px;
-  height: 70px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
-#login {
-  font-family: 'IBMPlexSans-Medium', sans-serif;
-  font-size: 14px;
-  color: #FFFFFF;
-  letter-spacing: 0;
-  text-align: center;
-  background-color: #4178BE;
-  border: none;
-  padding: 10px 40px;
-  text-decoration: none;
-  cursor: pointer;
-  width: 158px;
-  height: 40px;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-@-moz-document url-prefix() {
-  #login {
-    font-family: 'IBM Plex Sans Medium', 'Helvetica Neue', Arial, sans-serif;
-  }
-}
-.welcome-display {
-  display: block;
-  margin: 0 auto;
-  width: 30%;
-  height: auto;
-  font-family: 'IBMPlexSans-Light', sans-serif;
-  font-size: 1.5vw;
-  color: #152935;
-  letter-spacing: 0;
-  text-align: center;
-}
-@-moz-document url-prefix() {
-  .welcome-display {
-    font-family: 'IBM Plex Sans Light', 'Helvetica Neue', Arial, sans-serif;
-  }
-}
-.hintSection {
-  display: flex;
-  justify-content: center;
-  margin-top: 5%;
-  margin-bottom: 10%;
-}
-.flex-bottom {
-  font-family: 'IBMPlexSans-Medium', sans-serif;
-  font-size: 14px;
-  color: #42535C;
-  letter-spacing: 0;
-  line-height: 20px;
-  font-weight: normal;
-  flex: none;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-@-moz-document url-prefix() {
-  .flex-bottom {
-    font-family: 'IBM Plex Sans Medium', sans-serif;
-  }
-}
-.hide {
-  display: none;
-}
-.show {
-  display: block
-}
-.error {
-  padding-top: 20px;
-  font-size: 14px;
-  color: red;
-}
-.token-display, .info-display {
-  display: block;
-  width: 50%;
-  height: auto;
-  font-family: 'IBMPlexSans-Light', sans-serif;
-  font-size: 1vw;
-  color: #152935;
-  letter-spacing: 0;
-  word-break: break-all;
-  padding: 5px;
-  border-radius: 10px;
-  margin: 0 auto 15px;
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
