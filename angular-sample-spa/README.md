@@ -1,6 +1,6 @@
 # IBM Cloud AppID React Sample App
 
-The IBM Cloud AppID SDK can be used with React to create a secure single-page application. You will need an IBM Cloud App ID instance with a single-page application created. Use the clientId and discoveryEndpoint from the application credentials to initialize the AppID instance.
+The IBM Cloud App ID SDK can be used with React to create a secure single-page application. You will need an IBM Cloud App ID instance with a single-page application created. Use the client ID and discovery endpoint from your application credentials to initialize the App ID instance.
 
 ## Prerequisites
 * Node.js version 8 or later
@@ -10,20 +10,20 @@ The IBM Cloud AppID SDK can be used with React to create a secure single-page ap
 
 ## To run locally
 
-* Clone the repository
+1. Clone the repository.
 ```
-git clone 
+git clone https://github.com/ibm-cloud-security/appid-sample-code-snippets.git
 ```
-* Navigate to application workspace folder.
+2. Navigate to application workspace folder.
 ```
-cd angular-sample-spa
+cd angular-sample-app
 ```
-* To get the dpendencies for the app installed run
+3. Install dependencies for the application.
 ```
 npm install
 ```
 
-* To start the development server run 
+4. Start the development server. Navigate to http://localhost:4200 to access your application.
 ```
 ng serve
 ```
