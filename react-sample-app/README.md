@@ -32,7 +32,7 @@ The app will automatically reload if you change any of the source files.
 
 ## Detailed instructions on Creating your app
 
-1 Set up a frontend build pipeline by using create-react-app. Then move into the project directory.
+1 Set up a frontend build pipeline using create-react-app. Then move into the project directory.
 ```
 npx create-react-app my-app
 cd my-app
@@ -49,9 +49,9 @@ import AppID from 'ibmcloud-appid-js';
 ```
 const appID = React.useMemo(() => {
     return new AppID()
-  }, []);
+}, []);
 ```
-5 Initialize App ID and add error handling. Add your client ID and discovery endpoint which can be found in the Applications tab of the App ID dashboard.
+5 Initialize App ID and add error handling. Add your [client ID and discovery endpoint](https://cloud.ibm.com/docs/services/appid?topic=appid-single-page#create-spa-credentials) which can be found in the Applications tab of the App ID dashboard.
 ```
 const [errorState, setErrorState] = React.useState(false);
 const [errorMessage, setErrorMessage] = React.useState('');
@@ -65,14 +65,13 @@ const [errorMessage, setErrorMessage] = React.useState('');
       setErrorState(true);
       setErrorMessage(e.message);
     }
-  })();
+})();
 ```
 6 Create a login action that will execute when the login button is clicked. After a successful authentication, the welcomeDisplayState will be set to true and the userName will be set to the name returned in the App ID token.
 ```
 const [welcomeDisplayState, setWelcomeDisplayState] = React.useState(false);
 const [loginButtonDisplayState, setLoginButtonDisplayState] = React.useState(true);
 const [userName, setUserName] = React.useState('');
-
 
 const loginAction = async () => {
   try {
@@ -102,54 +101,55 @@ import './App.css';
 import AppID from 'ibmcloud-appid-js';
 
 function App() {
-  const appID = React.useMemo(() => {
-  return new AppID()
-   }, []);
+    const appID = React.useMemo(() => {
+        return new AppID()
+    }, []);
 
-const [errorState, setErrorState] = React.useState(false);
-const [errorMessage, setErrorMessage] = React.useState('');
+    const [errorState, setErrorState] = React.useState(false);
+    const [errorMessage, setErrorMessage] = React.useState('');
 
-(async () => {
-  try {
-    await appID.init({
-      'clientId': '<SPA_CLIENT_ID>',
-      'discoveryEndpoint': '<WELL_KNOWN_ENDPOINT>'
-    });
-  } catch (e) {
-    setErrorState(true);
-    setErrorMessage(e.message);
-  }
-})();
+    (async () => {
+      try {
+        await appID.init({
+          'clientId': '<SPA_CLIENT_ID>',
+          'discoveryEndpoint': '<WELL_KNOWN_ENDPOINT>'
+        });
+      } catch (e) {
+        setErrorState(true);
+        setErrorMessage(e.message);
+      }
+    })();
 
-const [welcomeDisplayState, setWelcomeDisplayState] = React.useState(false);
-const [loginButtonDisplayState, setLoginButtonDisplayState] = React.useState(true);
-const [userName, setUserName] = React.useState('');
+    const [welcomeDisplayState, setWelcomeDisplayState] = React.useState(false);
+    const [loginButtonDisplayState, setLoginButtonDisplayState] = React.useState(true);
+    const [userName, setUserName] = React.useState('');
 
-const loginAction = async () => {
-try {
-    const tokens = await appID.signin();
-    setErrorState(false);
-    setLoginButtonDisplayState(false);
-    setWelcomeDisplayState(true);
-    setUserName(tokens.idTokenPayload.name);
-  } catch (e) {
-    setErrorState(true);
-    setErrorMessage(e.message);
-  }
-};
+    const loginAction = async () => {
+    try {
+        const tokens = await appID.signin();
+        setErrorState(false);
+        setLoginButtonDisplayState(false);
+        setWelcomeDisplayState(true);
+        setUserName(tokens.idTokenPayload.name);
+      } catch (e) {
+        setErrorState(true);
+        setErrorMessage(e.message);
+      }
+    };
  
-return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        {welcomeDisplayState && <div> Welcome {userName}! You are now authenticated.</div>}
-        {loginButtonDisplayState && 
-<button 
-style={{fontSize: '24px', backgroundColor: 'skyblue', border: 'none', cursor: 'pointer'}} id='login' onClick={loginAction}>Login</button>}
-        {errorState && <div style={{color: 'red'}}>{errorMessage}</div>}
-      </header>
-    </div>
-);
+    return (
+        <div className='App'>
+          <header className='App-header'>
+            <img src={logo} className='App-logo' alt='logo' />
+            {welcomeDisplayState && <div> Welcome {userName}! You are now authenticated.</div>}
+            {loginButtonDisplayState && 
+                <button 
+                    style={{fontSize: '24px', backgroundColor: 'skyblue', border: 'none', cursor: 'pointer'}} 
+                    id='login' onClick={loginAction}>Login</button>}
+            {errorState && <div style={{color: 'red'}}>{errorMessage}</div>}
+          </header>
+        </div>
+    );
 }
 export default App;
 ```
@@ -157,5 +157,6 @@ export default App;
 ```
 npm start
 ```
+10 Make sure you register your redirect_uri (in this case http://localhost:3000/*) with App ID to ensure that only authorized clients are allowed to participate in the authorization workflow. This can be done on the App ID dashboard under the Manage Authentication tab in the Authentication Settings. Click [here](https://cloud.ibm.com/docs/services/appid?topic=appid-managing-idp#add-redirect-uri) for more details.
 
 Well done! You successfully integrated IBM Cloud App ID's SDK for SPA into a React application.
