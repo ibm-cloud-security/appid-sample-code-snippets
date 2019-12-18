@@ -10,19 +10,19 @@ The IBM Cloud App ID SDK can be used with React to create a secure single-page a
 
 ## To run locally
 
-1 Clone the repository.
+1. Clone the repository.
 ```
 git clone https://github.com/ibm-cloud-security/appid-sample-code-snippets.git
 ```
-2 Navigate to application workspace folder.
+2. Navigate to application workspace folder.
 ```
 cd angular-sample-app
 ```
-3 Install dependencies for the application.
+3. Install dependencies for the application.
 ```
 npm install
 ```
-4 Start the development server. Navigate to http://localhost:4200 to access your application.
+4. Start the development server. Navigate to http://localhost:4200 to access your application.
 ```
 ng serve
 ```
@@ -32,25 +32,25 @@ The app will automatically reload if you change any of the source files.
 ## Detailed instructions on Creating you application
 
 
-1 Install the Angular CLI
+1. Install the Angular CLI
 ```
 npm install -g @angular/cli
 ```
-2 Create a workspace and initial application and go to the workspace folder
+2. Create a workspace and initial application and go to the workspace folder
 ```
 ng new angular-sample-spa
 cd angular-sample-spa
 ```
-3 Install the IBM Cloud AppID SDK dependency using npm
+3. Install the IBM Cloud AppID SDK dependency using npm
 ```
 npm install ibmcloud-appid-js
 ```
 
-4 In the src directory, go to the app folder and import App ID in the `app.component.ts` file, with the following code:
+4. In the src directory, go to the app folder and import App ID in the `app.component.ts` file, with the following code:
 ```
 import AppID from 'ibmcloud-appid-js';
 ```
-5 In the AppComponent class initialize the states of the variables to be used in the application
+5. In the AppComponent class initialize the states of the variables to be used in the application
 ```
 userName = '';
 errorMessage = '';
@@ -58,7 +58,7 @@ buttonStyle = 'show';
 messageStyle = 'hide';
 errorStyle = 'hide'
 ```
-6 Create a loginAction function which when triggered will start the authentication flow and use tokens to get the user's information. 
+6. Create a loginAction function which when triggered will start the authentication flow and use tokens to get the user's information. 
 ```
 async onLoginClick() {
     const appID = new AppID();
@@ -79,7 +79,7 @@ async onLoginClick() {
     }
 }
 ```
-7 In the `app.component.html` file, clear all the content in it and add the HTML and CSS code for the application.
+7. In the `app.component.html` file, clear all the content in it and add the HTML and CSS code for the application.
 ```
 <style>
   .hide {
@@ -100,10 +100,10 @@ async onLoginClick() {
 <p [ngClass]="messageStyle" style="margin-left: 10px;" id="welcomeNameID">Hi {{userName}}! You are now authenticated </p>
 <div [ngClass]="errorStyle" id="error" style="margin-left: 10px; color: red;">{{errorMessage}}</div>
 ```
-8 Save all the files and in your terminal, run the following command to access your app from http://localhost:4200.
+8. Save all the files and in your terminal, run the following command to access your app from http://localhost:4200.
 ```
 ng serve
 ```
-9 Make sure you register your redirect_uri (in this case http://localhost:3000/*) with App ID to ensure that only authorized clients are allowed to participate in the authorization workflow. This can be done on the App ID dashboard under the Manage Authentication tab in the Authentication Settings. Click [here](https://cloud.ibm.com/docs/services/appid?topic=appid-managing-idp#add-redirect-uri) for more details.
+9. Make sure you register your redirect_uri (in this case http://localhost:3000/*) with App ID to ensure that only authorized clients are allowed to participate in the authorization workflow. This can be done on the App ID dashboard under the Manage Authentication tab in the Authentication Settings. Click [here](https://cloud.ibm.com/docs/services/appid?topic=appid-managing-idp#add-redirect-uri) for more details.
 
 Well done! You successfully integrated IBM Cloud App ID's SDK for SPA into an Angular application.
