@@ -6,31 +6,27 @@ import AppID from 'ibmcloud-appid-js';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
-  userName = ''
-  idToken = '';
-  userData = '';
+  userName = '';
   errorMessage = '';
-  style = 'show';
-  displayState = 'hide';
-
+  buttonStyle = 'show';
+  messageStyle = 'hide';
+  errorStyle = 'hide';
   async onLoginClick() {
-    const appid = new AppID();
+    const appID = new AppID();
     try {
-      await appid.init({
-        clientId: '<CLIENT_ID>',
+      await appID.init({
+        clientId: '<SPA_CLIENT_ID>',
         discoveryEndpoint: '<WELL_KNOWN_ENDPOINT>'
       });
-      const tokens = await appid.signin();
-      const userInfo =  await appid.getUserInfo(tokens.accessToken);
+      const tokens = await appID.signin();
       const decodeIDTokens = tokens.idTokenPayload;
-      this.userName = 'Hi ' + decodeIDTokens.name + ', Congratulations!';
-      this.idToken = JSON.stringify(decodeIDTokens);
-      this.userData = JSON.stringify(userInfo);
-      this.style = 'hide';
-      this.displayState = 'show';
+      this.userName = decodeIDTokens.name;
+      this.buttonStyle = 'hide';
+      this.messageStyle = 'show';
+      this.errorStyle = 'hide';
     } catch (e) {
+      this.errorStyle = 'show';
       this.errorMessage = e.message;
     }
   }
