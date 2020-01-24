@@ -16,7 +16,7 @@ export class AppComponent {
     const appID = new AppID();
     try {
       await appID.init({
-        clientId: '<SPA_CLIENT_ID>',
+        clientId: '<CLIENT_ID>',
         discoveryEndpoint: '<WELL_KNOWN_ENDPOINT>'
       });
       const tokens = await appID.signin();
