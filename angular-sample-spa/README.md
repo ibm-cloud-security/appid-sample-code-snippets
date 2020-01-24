@@ -82,23 +82,18 @@ async onLoginClick() {
 7 In the `app.component.html` file, clear all the content in it and add the HTML and CSS code for the application.
 ```
 <style>
-	.hide {
-		display: none;
-	}
-	.show {
-		display: block;
-	}
+  .hide {display: none;}
+  .show {display: block;}
 </style>
 
 <button
-	[ngClass]="buttonStyle"
-	style="background-color: #4178BE; width: 270px;
-	height: 40px;color: #FFFFFF;font-size: 14px;border: none; margin: 10px 5px;"
-	id="login"
-	(click)="onLoginClick()">Login with IBM Cloud App ID
+  [ngClass]="buttonStyle"
+  style="background-color: #4178BE; width: 270px; height: 40px;color: #FFFFFF;font-size: 14px;border: none; margin: 10px 5px;"
+  (click)="onLoginClick()">Login with IBM Cloud App ID
 </button>
-<p [ngClass]="messageStyle" style="margin-left: 10px;" id="welcomeNameID">Hi {{userName}} congratulations! You are now authenticated </p>
-<div [ngClass]="errorStyle" id="error" style="margin-left: 10px; color: red;">{{errorMessage}}</div>
+<p [ngClass]="messageStyle" style="margin-left: 10px;">Hi {{userName}} congratulations! You are now authenticated </p>
+<div [ngClass]="errorStyle" style="margin-left: 10px; color: red;">{{errorMessage}}</div>
+
 ```
 8 Save all the files and in your terminal, run the following command to access your app from http://localhost:4200.
 ```

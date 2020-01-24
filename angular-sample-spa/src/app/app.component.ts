@@ -7,6 +7,7 @@ import AppID from 'ibmcloud-appid-js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'angular-sample-spa';
   userName = '';
   errorMessage = '';
   buttonStyle = 'show';
