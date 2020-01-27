@@ -97,6 +97,6 @@ async onLoginClick() {
 ```
 ng serve
 ```
-9 Make sure you register your redirect_uri (in this case http://localhost:3000/*) with App ID to ensure that only authorized clients are allowed to participate in the authorization workflow. This can be done on the App ID dashboard under the Manage Authentication tab in the Authentication Settings. Click [here](https://cloud.ibm.com/docs/services/appid?topic=appid-managing-idp#add-redirect-uri) for more details.
+9 Make sure you register your redirect_uri (in this case http://localhost:4200/*) with App ID to ensure that only authorized clients are allowed to participate in the authorization workflow. This can be done on the App ID dashboard under the Manage Authentication tab in the Authentication Settings. Click [here](https://cloud.ibm.com/docs/services/appid?topic=appid-managing-idp#add-redirect-uri) for more details.
 
 Well done! You successfully integrated IBM Cloud App ID's SDK for SPA into an Angular application.
