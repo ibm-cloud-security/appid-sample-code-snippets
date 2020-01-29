@@ -1,0 +1,29 @@
+<div [ngClass]="displayState">
+  <div class="welcome-display">
+    <p id="welcomeNameID">{{userName}}</p>
+    <p id="welcomeMessageII">You've made your first authentication.</p>
+  </div>
+  <div class="collapsible">
+    <button type="button" [ngClass]="tokenButtonClass" (click)="onTokenClick()">
+      <img [ngClass]="tokenImageClass" src="../../assets/images/20@2x.svg">
+      ID Token
+    </button>
+    <div [ngClass]="tokenContentClass" >{{idToken}}</div>
+  </div>
+  <div class="collapsible">
+    <button type="button" [ngClass]="infoButtonClass" (click)="onInfoClick()">
+      <img [ngClass]="infoImageClass" src="../../assets/images/20@2x.svg">
+      User Information
+    </button>
+    <div [ngClass]="infoContentClass" >{{userData}}</div>
+  </div>
+  <div class="hintSection">
+    <div class="flex-bottom"><img alt="hint image" src="../../assets/images/hint_icon.svg"></div>
+    <div class="flex-bottom">
+      Hint: To view your ID Token<br>
+      and User Information, click<br>
+      on the arrows above.
+    </div>
+  </div>
+ </div>
+

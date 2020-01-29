@@ -1,6 +1,3 @@
-<button
-  [ngClass]="buttonStyle" id="button"
-  (click)="onLoginClick()">Login with IBM Cloud App ID
-</button>
-<p [ngClass]="messageStyle" id="message">Hi {{userName}} congratulations! You are now authenticated </p>
-<div [ngClass]="errorStyle" id="error">{{errorMessage}}</div>
+<app-navbar></app-navbar>
+<app-welcome (changeState)="onChangeState($event)"></app-welcome>
+<app-home [displayState]="displayStateStatus" [userName]="userNameStatus" [idToken]="idTokenStatus" [userData]="userDataStatus"></app-home>
