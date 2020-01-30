@@ -5,20 +5,20 @@
   </div>
   <div class="collapsible">
     <button type="button" [ngClass]="tokenButtonClass" (click)="onTokenClick()">
-      <img [ngClass]="tokenImageClass" src="../../assets/images/20@2x.svg">
+      <img [ngClass]="tokenImageClass" src="../../assets/20@2x.svg">
       ID Token
     </button>
     <div [ngClass]="tokenContentClass" >{{idToken}}</div>
   </div>
   <div class="collapsible">
     <button type="button" [ngClass]="infoButtonClass" (click)="onInfoClick()">
-      <img [ngClass]="infoImageClass" src="../../assets/images/20@2x.svg">
+      <img [ngClass]="infoImageClass" src="../../assets/20@2x.svg">
       User Information
     </button>
     <div [ngClass]="infoContentClass" >{{userData}}</div>
   </div>
   <div class="hintSection">
-    <div class="flex-bottom"><img alt="hint image" src="../../assets/images/hint_icon.svg"></div>
+    <div class="flex-bottom"><img alt="hint image" src="../../assets/hint_icon.svg"></div>
     <div class="flex-bottom">
       Hint: To view your ID Token<br>
       and User Information, click<br>
