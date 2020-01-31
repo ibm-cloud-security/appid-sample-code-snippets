@@ -2,22 +2,13 @@
   <div class="welcome-display">
     <div>
       <img alt="App ID Logo" class="logo-icon" src="../../assets/app_id_icon.svg">
-        <p>
-          Welcome to the<br>
-          IBM Cloud App ID SPA SDK<br>
-          Sample App
-        </p>
+      <p>
+        Welcome to the<br>
+        IBM Cloud App ID SPA SDK<br>
+        Sample App
+      </p>
     </div>
-    <div [ngClass]="spinner" class="loader"></div>
     <button id="login" [ngClass]='buttonDisplay' (click)="onLoginClick()">Login</button>
     <div [ngClass]="errorStyle" id="error">{{errorMessage}}</div>
-  </div>
-  <div class="hintSection">
-    <div class="flex-bottom"><img alt="hint image" id="hintIcon" src="../../assets/hint_icon.svg"></div>
-    <div class="flex-bottom">
-      Hint: To get started, click<br>
-      the Login button above to reveal<br>
-      the App ID login Pop-up window.
-    </div>
   </div>
 </div>

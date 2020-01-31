@@ -1,4 +1,4 @@
-# IBM Cloud AppID Angular Sample App
+# IBM Cloud App ID Angular Sample App
 
 The IBM Cloud App ID SDK can be used with Angular to create a secure single-page application. You will need an IBM Cloud App ID instance with a single-page application created. Use the client ID and discovery endpoint from your application credentials to initialize the App ID instance.
 
