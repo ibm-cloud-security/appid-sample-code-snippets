@@ -10,22 +10,22 @@ The IBM Cloud App ID SDK can be used with Angular to create a secure single-page
 
 ## To run locally
 
-1 Clone the repository.
+1. Clone the repository.
 ```
 git clone https://github.com/ibm-cloud-security/appid-sample-code-snippets.git
 ```
-2 Navigate to the workspace folder of the application.
+2. Navigate to the workspace folder of the application.
 ```
-cd angular-sample-app
+cd angular-sample-spa
 ```
-3 Install dependencies for the application.
+3. Install dependencies for the application.
 ```
 npm install
 ```
-4 Start the development server. Navigate to http://localhost:4200 to access your application.
+4. Start the development server. Navigate to http://localhost:4200 to access your application.
 ```
 ng serve
 ```
-5 Make sure you register your redirect_uri (in this case http://localhost:4200/*) with App ID to ensure that only authorized clients are allowed to participate in the authorization workflow. This can be done on the App ID dashboard under the Manage Authentication tab in the Authentication Settings. Click [here](https://cloud.ibm.com/docs/services/appid?topic=appid-managing-idp#add-redirect-uri) for more details.
+5. Make sure you register your redirect_uri (in this case http://localhost:4200/*) with App ID to ensure that only authorized clients are allowed to participate in the authorization workflow. This can be done on the App ID dashboard under the Manage Authentication tab in the Authentication Settings. Click [here](https://cloud.ibm.com/docs/services/appid?topic=appid-managing-idp#add-redirect-uri) for more details.
 
 Well done! You successfully integrated IBM Cloud App ID's SDK for SPA into an Angular application.
