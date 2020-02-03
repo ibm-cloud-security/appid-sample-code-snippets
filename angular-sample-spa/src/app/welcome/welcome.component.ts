@@ -15,8 +15,8 @@ export class WelcomeComponent implements OnInit {
   async ngOnInit() {
     try {
       await this.appid.init({
-        clientId: '1b0e3658-fc1f-402e-843c-18402d4dbe58',
-        discoveryEndpoint: 'https://eu-gb.appid.test.cloud.ibm.com/oauth/v4/5b1eb5f1-34bd-41fd-b6dd-e257c188a4dd/.well-known/openid-configuration'
+        clientId: '<CLIENT_ID>',
+        discoveryEndpoint: '<WELL_KNOWN_ENDPOINT>'
       });
     } catch (e) {
       this.errorMessage = e.message;
