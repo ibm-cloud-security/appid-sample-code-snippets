@@ -10,5 +10,5 @@ export class AppComponent {
   onChangeState(value) {
     this.displayStateStatus = 'show';
     this.userNameStatus = value.userName;
-  }
+    }
 }

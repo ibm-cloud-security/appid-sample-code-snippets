@@ -14,9 +14,9 @@ The IBM Cloud App ID SDK can be used with Angular to create a secure single-page
 ```
 git clone https://github.com/ibm-cloud-security/appid-sample-code-snippets.git
 ```
-2 Navigate to application workspace folder.
+2 Navigate to the workspace folder of the application.
 ```
-cd angular-sample-spa
+cd angular-sample-app
 ```
 3 Install dependencies for the application.
 ```
