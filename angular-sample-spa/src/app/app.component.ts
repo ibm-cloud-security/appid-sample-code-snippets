@@ -1,33 +1,14 @@
 import { Component } from '@angular/core';
-import AppID from 'ibmcloud-appid-js';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  userName = '';
-  errorMessage = '';
-  buttonStyle = 'show';
-  messageStyle = 'hide';
-  errorStyle = 'hide';
-  async onLoginClick() {
-    const appID = new AppID();
-    try {
-      await appID.init({
-        clientId: '<SPA_CLIENT_ID>',
-        discoveryEndpoint: '<WELL_KNOWN_ENDPOINT>'
-      });
-      const tokens = await appID.signin();
-      const decodeIDTokens = tokens.idTokenPayload;
-      this.userName = decodeIDTokens.name;
-      this.buttonStyle = 'hide';
-      this.messageStyle = 'show';
-      this.errorStyle = 'hide';
-    } catch (e) {
-      this.errorStyle = 'show';
-      this.errorMessage = e.message;
+  displayStateStatus = 'hide';
+  userNameStatus = '';
+  onChangeState(value) {
+    this.displayStateStatus = 'show';
+    this.userNameStatus = value.userName;
     }
-  }
 }

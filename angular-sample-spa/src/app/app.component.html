@@ -1,18 +1,2 @@
-<style>
-  .hide {
-    display: none;
-  }
-  .show {
-    display: block;
-  }
-</style>
-
-<button
-  [ngClass]="buttonStyle"
-  style="background-color: #4178BE; width: 270px;
-	height: 40px;color: #FFFFFF;font-size: 14px;border: none; margin-left: 10px;"
-  id="login"
-  (click)="onLoginClick()">Login with IBM Cloud App ID
-</button>
-<p [ngClass]="messageStyle" style="margin-left: 10px;" id="welcomeNameID">Hi {{userName}}! You are now authenticated </p>
-<div [ngClass]="errorStyle" id="error" style="margin-left: 10px; color: red;">{{errorMessage}}</div>
+<app-welcome (changeState)="onChangeState($event)"></app-welcome>
+<app-home [displayState]="displayStateStatus" [userName]="userNameStatus"></app-home>

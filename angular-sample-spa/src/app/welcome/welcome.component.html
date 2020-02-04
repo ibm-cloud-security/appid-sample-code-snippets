@@ -1,0 +1,14 @@
+<div id="welcome" [ngClass]="style">
+  <div class="welcome-display">
+    <div>
+      <img alt="App ID Logo" class="logo-icon" src="../../assets/app_id_icon.svg">
+      <p>
+        Welcome to the<br>
+        IBM Cloud App ID SPA SDK<br>
+        Sample App
+      </p>
+    </div>
+    <button id="login" [ngClass]='buttonDisplay' (click)="onLoginClick()">Login</button>
+    <div [ngClass]="errorStyle" id="error">{{errorMessage}}</div>
+  </div>
+</div>
