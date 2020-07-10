@@ -15,7 +15,7 @@ const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
 const nconf = require("nconf");
-const appID = require("bluemix-appid");
+const appID = require("ibmcloud-appid");
 
 const helmet = require("helmet");
 const express_enforces_ssl = require("express-enforces-ssl");
@@ -23,9 +23,8 @@ const cfEnv = require("cfenv");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
+const APIStrategy = appID.APIStrategy;
 const WebAppStrategy = appID.WebAppStrategy;
-const userAttributeManager = appID.UserAttributeManager;
-const UnauthorizedException = appID.UnauthorizedException;
 
 const LOGIN_URL = "/ibm/bluemix/appid/login";
 const CALLBACK_URL = "/ibm/bluemix/appid/callback";
@@ -61,11 +60,13 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+passport.use(new APIStrategy({
+	oauthServerUrl: config.oauthServerUrl
+}));
+
 
 let webAppStrategy = new WebAppStrategy(config);
 passport.use(webAppStrategy);
-
-userAttributeManager.init(config);
 
 // Configure passportjs with user serialization/deserialization. This is required
 // for authenticated session persistence accross HTTP requests. See passportjs docs
@@ -81,7 +82,10 @@ passport.deserializeUser(function(obj, cb) {
 
 // Protected area. If current user is not authenticated - redirect to the login widget will be returned.
 // In case user is authenticated - a page with current user information will be returned.
-app.get("/auth/login", passport.authenticate(WebAppStrategy.STRATEGY_NAME, {successRedirect : UI_BASE_URL, forceLogin: true}));
+app.get("/auth/login", passport.authenticate(WebAppStrategy.STRATEGY_NAME, {
+    successRedirect: UI_BASE_URL,
+    forceLogin: true
+}));
 
 // Callback to finish the authorization process. Will retrieve access and identity tokens/
 // from AppID service and redirect to either (in below order)
@@ -91,6 +95,9 @@ app.get("/auth/login", passport.authenticate(WebAppStrategy.STRATEGY_NAME, {succ
 app.get(CALLBACK_URL, passport.authenticate(WebAppStrategy.STRATEGY_NAME, {allowAnonymousLogin: true}));
 
 
+app.get("/protected", passport.authenticate(WebAppStrategy.STRATEGY_NAME), function(req, res){
+    res.json(req.user);
+});
 
 app.get("/auth/logout", function(req, res, next) {
 	WebAppStrategy.logout(req);

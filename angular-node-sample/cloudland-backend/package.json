@@ -8,13 +8,13 @@
         "start": "node app.js"
     },
     "dependencies": {
-        "bluemix-appid": "^3.0.0",
-        "cfenv": "^1.0.3",
-        "cors": "^2.8.4",
-        "express": "^4.13.4",
+        "cfenv": "^1.2.2",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
         "express-enforces-ssl": "^1.1.0",
-        "express-session": "^1.15.1",
+        "express-session": "^1.17.1",
+        "ibmcloud-appid": "^6.1.0",
         "nconf": "^0.10.0",
-        "passport": "^0.3.2"
+        "passport": "^0.4.1"
     }
 }
